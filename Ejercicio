@@ -1,0 +1,96 @@
+package ejercicios;
+import java.util.*;
+
+public class prueba_4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Ingresa el numero a evaluar: ");
+		Scanner entrada=new Scanner(System.in);
+		int i=entrada.nextInt();
+		NumerosIf numeroPrueba=new NumerosIf(i);
+		NumeroWhile numeroPrueba2=new NumeroWhile(i);		
+		NumeroDoWhile numeroPrueba3=new NumeroDoWhile(i);
+		NumeroFor numeroPrueba4=new NumeroFor(i);
+		System.out.println("Ingresa el numero de la estacion 1-4: ");
+		Scanner entrada2=new Scanner(System.in);
+		int j=entrada2.nextInt();
+		switchCase pruebaEstacion=new switchCase(j);
+	}
+
+}
+
+class NumerosIf{
+	int numeroIf=0;
+	public NumerosIf(int numero) {
+		this.numeroIf=numero;
+		 if(numero>0) {
+			 System.out.println("El numero es positivo");
+		 } else if(numero<0) {
+			 System.out.println("El numero es negativo");
+		 } else {
+			 System.out.println("El numero es cero");
+		 }
+	}
+	
+}
+
+class NumeroWhile{
+	int numeroWhile=0;
+	public NumeroWhile(int numero){
+		this.numeroWhile=numero;
+		System.out.println("Aqui comienza el bucle while");
+		while(numero<3) {
+			System.out.println(numero);
+			numero++;
+		}
+		
+	}
+	
+}
+class NumeroDoWhile{
+	int numeroDoWhile=0;
+	public NumeroDoWhile(int numero){
+		this.numeroDoWhile=numero;
+		System.out.println("Aqui comienza el bucle Do while");
+		do {
+			numero++;
+		}while(numero<3);
+		System.out.println(numero);
+		
+	}
+	
+}
+
+class NumeroFor{
+	int numeroFor=0;
+	public NumeroFor(int numero) {
+		this.numeroFor=numero;
+		System.out.println("Aqui comienza el bucle For");
+	for(int i=0;numeroFor<=3;numeroFor++) {
+		System.out.println(numeroFor);
+	}
+		
+	}
+}
+
+class switchCase{
+	int eleccion2=0;
+	String Estacion;
+	public switchCase(int eleccion) {
+		this.eleccion2=eleccion;
+		switch(eleccion) {
+		case 1: Estacion="Primavera";
+				break;
+		case 2: Estacion="Verano";
+				break;
+		case 3: Estacion="Otoño";
+				break;
+		case 4: Estacion="Invierno";
+				break;
+			
+		default: Estacion="invalida";
+		}
+		System.out.println("La estacion es " + Estacion);
+	}
+}
